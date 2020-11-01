@@ -1,0 +1,7 @@
+version: v1beta1
+lint:
+  use:
+    - DEFAULT
+    - OTHER
+  except:
+    - PACKAGE_DIRECTORY_MATCH

@@ -1,0 +1,6 @@
+grpc:
+  port: 8181
+http:
+  port: 8080
+logger:
+  production: false

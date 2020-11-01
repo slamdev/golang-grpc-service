@@ -1,0 +1,16 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+metadata:
+  name: golang-grpc-service
+build:
+  tagPolicy:
+    sha256: {}
+  artifacts:
+    - image: slamdev/golang-grpc-service
+      docker:
+        cacheFrom:
+          - golang:1.15-alpine3.12
+          - alpine:3.12
+          - slamdev/golang-grpc-service
+deploy:
+  kubectl: {}

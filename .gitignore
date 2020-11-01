@@ -1,0 +1,10 @@
+/.idea/
+/*.iml
+/bin/
+/pkged.go
+/api/google/
+/api/grpc/
+/api/*.pb.go
+/api/*.pb.gw.go
+/api/*.swagger.json
+/api/openapi.yaml

@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package api.v1;
+
+option go_package = ".;api";
+
+import "google/api/annotations.proto";
+
+service GolangGrpcService {
+    // Returns a list of users having the same name
+    rpc ListUsers (ListUsersRequest) returns (ListUsersResponse) {
+        option (google.api.http) = {
+            get: "/api/users/{user_name}"
+        };
+    }
+    // Creates a new user.
+    rpc CreateUser (CreateUserRequest) returns (CreateUserResponse) {
+        option (google.api.http) = {
+            post: "/api/users"
+            body: "user"
+        };
+    }
+}
+
+message User {
+    int64 id = 1;
+    string name = 2;
+}
+
+message ListUsersRequest {
+    string user_name = 1;
+}
+
+message ListUsersResponse {
+    repeated User users = 1;
+}
+
+message CreateUserRequest {
+    User user = 1;
+}
+
+message CreateUserResponse {
+    User user = 1;
+}
